@@ -1,0 +1,408 @@
+/* DevDanJones.com 'Roboto'*/
+body {position: relative; font-family: "Fira Sans", arial, sans-serif;}
+section {position: relative; z-index: 3}
+
+h1 {color: white; font-size: 78px; font-weight: bold; text-align: center; padding-top: 20px; margin-bottom: 30px; transition-property: font-size; transition-duration: 1s;}
+h2 {color: white; font-size: 48px; font-weight: bold; margin-top: 50px; margin-bottom: 20px; transition-property: font-size; transition-duration: 1s;}
+
+p {color: white;}
+
+@media all and (max-width:992px) {
+	h1 {font-size: 62px;}
+	h2 {font-size: 38px;}
+}
+
+@media all and (max-width:767px) {
+	h1 {font-size: 48px;}
+	h2 {font-size: 28px;}
+}
+
+
+/* Nav*/
+.navbar {position: absolute; width: 100%; z-index: 99; background-color: rgba(0,0,0,0.8) !important;}
+.navbar.nav-fixed {position: fixed; width: 100%; top: 0px !important; z-index: 1000; background-color: rgba(0,0,0,0.8) !important;}
+.navbar.nav-mobile {position: fixed !important; top: 0px}
+.navbar-brand {font-weight: bold;}
+
+/*Loading */
+#DDJLoading {position: fixed; z-index: 100; top: 0px; bottom: 0px; left: 0px; right: 0px; background-color: #e5eff1; font-size: 36px; transition-property: opacity; transition-duration: 1s; opacity: 1;}
+#DDJLoading img {width: 100px; display: block; margin: 0px auto 50px auto;}
+#DDJLoading .container-fliud, #DDJLoading .row {position: absolute; top: 0px; bottom: 0px; left: 0px; width: 100%;}
+#DDJLoading .col {text-align: center;}
+
+/*Background*/
+#Home canvas, #Home #imageBack {position: fixed; top: 0px; right: 0px; bottom: 0px; left: 0px; background-color: black;}
+#Home canvas {z-index: 2;}
+#Home #imageBack {z-index: 1;}
+
+
+/* Home */
+#Home {position: relative; background-color: black; color: white; height: 1000px;}
+#Home .row1 {position: relative; z-index: 10;}
+#Home .row3 {border-top: 1px solid rgba(255,255,255,0.5); margin: 0px 20px;}
+#Home .row2 div {text-align: center;}
+#Home .home-container {background-color: rgba(0,0,0,0.7); border-radius: 20px; box-shadow: 5px 5px 20px rgba(0,0,0,0.3);}
+#Home .img-dan {width: 150px; height: 150px; background-image: url(/images/Dan-Jones.jpg); background-size: cover; display: block; margin: 20px auto; border-radius: 50%; border: 3px solid white;}
+#Home h1 {margin: 0px; padding: 0px;}
+#Home h2 {padding-top: 20px; padding-bottom: 20px; text-align: center; margin: 0px;}
+#Home img.sm {width: 40px; margin: 20px 10px 20px 0px; opacity: 0.7; cursor: pointer;}
+#Home img.sm:hover {opacity: 1;}
+
+@media all and (min-width:1200px) {
+	#Home h1 {font-size: 100px;}
+}
+
+@media all and (max-width:992px) {
+	#Home img.sm {width: 30px; margin-right: 7px}
+}
+
+@media all and (max-width:767px) {
+	#Home .home-container {margin: 0px 20px;}
+}
+
+/* Home Down Arrow*/
+#Home .center-con {position: absolute; left: 0px; bottom: 50px; width: 100%;}
+#Home .center-con .round {cursor: pointer; position: relative; border: 3px solid #fff; width: 100px; height: 100px; border-radius: 100%; margin: auto;}
+#Home .center-con .round span {z-index: 999; height: 3px; margin:1px; width: 30px; background: #fff; transition: 0.4s ease;}
+#Home .center-con .round span:first-child { display: block; position: absolute; transform: rotate(45deg); left: 25%; bottom: 35%;}
+#Home .center-con .round span:nth-child(2) { display: block; position: absolute; transform: rotate(-45deg); left: 45%; bottom: 35%;}
+#Home .center-con .round span:nth-child(3) { display: block; position: absolute; transform: rotate(45deg); left: 25%; bottom: 54%;}
+#Home .center-con .round span:nth-child(4) { display: block; position: absolute; transform: rotate(-45deg); left: 45%; bottom: 54%;}
+#Home .center-con .round:hover span:nth-child(1) { transform: rotate(-135deg);}
+#Home .center-con .round:hover span:nth-child(2) { transform: rotate(135deg);}
+#Home .center-con .round:hover span:nth-child(3) { transform: rotate(225deg);}
+#Home .center-con .round:hover span:nth-child(4) { transform: rotate(-225deg);}
+
+@media all and (max-width:992px) {
+	#Home .center-con {bottom: 10px;}
+	#Home .center-con .round {border: 2px solid #fff; width: 50px; height: 50px;}
+	#Home .center-con .round span {height: 2px; width: 15px;}
+	#Home .center-con .round span:first-child { left: 22%; bottom: 32%;}
+	#Home .center-con .round span:nth-child(2) { left: 42%; bottom: 32%;}
+	#Home .center-con .round span:nth-child(3) { left: 22%; bottom: 51%;}
+	#Home .center-con .round span:nth-child(4) { left: 42%; bottom: 51%;}
+}
+
+/* About */
+#About {padding: 80px 10% 0px 10%; background-color: rgba(0,0,0,0.7); color: white;}
+#About p {margin: 0px;}
+
+/* Skillset*/
+#Skillset {padding: 20px; padding-top: 80px; background-color: rgba(0,0,0,0.7)}
+#Skillset div.skill-container {position: relative; width: 100%; margin-bottom: 20px; overflow: hidden; border-radius: 20px; border: 1px solid rgba(0,0,0,0.15); background-color: rgba(255,255,255,0.3)}
+#Skillset div.skill-container {
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.5),
+    0 2px 2px rgba(0,0,0,0.3),
+    0 0 4px 1px rgba(0,0,0,0.2),
+    inset 0 3px 2px rgba(255,255,255,.22), 
+    inset 0 -3px 2px rgba(0,0,0,.15), 
+    inset 0 20px 10px rgba(255,255,255,.12), 
+    0 0 4px 1px rgba(0,0,0,.1), 
+    0 3px 2px rgba(0,0,0,.2);
+}
+
+#Skillset span.skill {
+	position: relative;
+	display: block;
+	width: 100%;
+	padding-top: 130%; 
+	background-size: 80% 60%; 
+	background-position: 50% 20%;
+	background-repeat: no-repeat; 
+	-webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 1s;
+    transition-duration: 1s;
+	-webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+	-webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+
+#Skillset div.skill-container:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255,255,255,0.1);
+  border-radius: 100%;
+  box-shadow: 0px 0px 100px rgba(255,255,255,0.25);
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+
+#Skillset div.skill-container:hover:before {
+  -webkit-transform: scale(2);
+  transform: scale(2);
+}
+
+#Skillset span.skill-title {position: absolute; width: 100%; top: 72%; text-align: center; color: white; line-height: 1.2em; }
+
+#Skillset #html5 {background-image: url(/images/html5.png);}
+#Skillset #css3 {background-image: url(/images/css3.png);}
+#Skillset #javascript {background-image: url(/images/js.png);}
+#Skillset #jquery {background-image: url(/images/jquery.png);}
+#Skillset #bootstrap {background-image: url(/images/Bootstrap.png);}
+#Skillset #csharp {background-image: url(/images/c%23.png);}
+#Skillset #asp-net {background-image: url(/images/asp-net.png);}
+#Skillset #sql {background-image: url(/images/sql.png);}
+#Skillset #php {background-image: url(/images/php.png);}
+#Skillset #joomla {background-image: url(/images/joomla.png);}
+#Skillset #wordpress {background-image: url(/images/wordpress.png);}
+#Skillset #responsive {background-image: url(/images/responsive.png);}
+#Skillset #seo {background-image: url(/images/seo.png);}
+#Skillset #ecommerce {background-image: url(/images/ecommerce.png);}
+
+@media all and (max-width:992px) and (min-width: 576px) {
+	#Skillset .col-sm-2 {padding-left: 10px; padding-right: 10px;}
+	#Skillset span.skill-title {font-size: 13px; line-height: 1em; }
+	#Skillset div.skill-container {border-radius: 10px;}
+}
+
+@media all and (max-width:767px) and (min-width: 576px) {
+	#Skillset .col-sm-2 {padding-left: 5px; padding-right: 5px;}
+	#Skillset span.skill-title {font-size: 11px; line-height: 1em;}
+	#Skillset div.skill-container {border-radius: 7px;}
+}
+
+/* Professional Background */
+#ProfessionalBackground {padding-top: 80px; padding-bottom: 50px;}
+#ProfessionalBackground .pb-container {background-color: rgba(0,0,0,0.7); border-radius: 20px; box-shadow: 5px 5px 20px rgba(0,0,0,0.3); padding: 20px;}
+
+#ProfessionalBackground div.jobs-container {position: relative; }
+
+#ProfessionalBackground span.job-title {margin-top: 10px;display: block; color: white; margin-bottom: 10px; line-height: 1.2em; }
+#ProfessionalBackground .job-dates {display: block; margin-bottom: 10px; font-weight: bold}
+#ProfessionalBackground .job-desc {display: block; color: #ccc; margin-bottom: 10px;}
+
+#ProfessionalBackground .left-col {width: 45%; margin: 0px;}
+#ProfessionalBackground .center-col {position: absolute; left: 45%; width: 10%; top: 0px; bottom: 0px; margin: 0px;}
+#ProfessionalBackground .right-col {position: absolute; left: 55%; width: 45%; top: 0px; bottom: 0px; margin: 0px;}
+
+#ProfessionalBackground .center-col .center-line {display: block; position: absolute; top: 0px; bottom: 0px; left: 45%; right: 45%; background-color: rgba(255,255,255,0.5);}
+
+#ProfessionalBackground .job-spacer {display: block; -webkit-transition-property: height; transition-property: height; -webkit-transition-duration: 1s; transition-duration: 1s;}
+#ProfessionalBackground #experienceContainer #job1Spacer {height: 80px;}
+#ProfessionalBackground #experienceContainer #job2Spacer {height: 20px;}
+#ProfessionalBackground #experienceContainer #job3Spacer {height: 20px;}
+#ProfessionalBackground #experienceContainer #job4Spacer {height: 100px;}
+#ProfessionalBackground #educationContainer #job1Spacer {height: 130px;}
+#ProfessionalBackground #educationContainer #job2Spacer {height: 200px;}
+
+@media all and (max-width: 992px){
+	#ProfessionalBackground #experienceContainer #job1Spacer {height: 100px;}
+	#ProfessionalBackground #experienceContainer #job2Spacer {height: 20px;}
+	#ProfessionalBackground #experienceContainer #job3Spacer {height: 20px;}
+	#ProfessionalBackground #experienceContainer #job4Spacer {height: 150px;}
+	#ProfessionalBackground #educationContainer #job1Spacer {height: 170px;}
+	#ProfessionalBackground #educationContainer #job2Spacer {height: 200px;}
+}
+
+@media all and (max-width: 776px){
+	#ProfessionalBackground #experienceContainer #job1Spacer {height: 20px;}
+	#ProfessionalBackground #experienceContainer #job2Spacer {height: 20px;}
+	#ProfessionalBackground #experienceContainer #job3Spacer {height: 20px;}
+	#ProfessionalBackground #experienceContainer #job4Spacer {height: 170px;}
+	#ProfessionalBackground #educationContainer #job1Spacer {height: 150px;}
+	#ProfessionalBackground #educationContainer #job2Spacer {height: 200px;}
+}
+
+@media all and (max-width: 576px){
+	#ProfessionalBackground #experienceContainer #job1Spacer {height: 50px;}
+	#ProfessionalBackground #experienceContainer #job2Spacer {height: 20px;}
+	#ProfessionalBackground #experienceContainer #job3Spacer {height: 20px;}
+	#ProfessionalBackground #experienceContainer #job4Spacer {height: 50px;}
+	#ProfessionalBackground #educationContainer #job1Spacer {height: 120px;}
+	#ProfessionalBackground #educationContainer #job2Spacer {height: 100px;}
+	#ProfessionalBackground .job-desc {display: none;}
+}
+
+#ProfessionalBackground div.job-container {position: relative; padding: 5%; width: 100%; margin-bottom: 20px; border-radius: 20px; border: 1px solid rgba(0,0,0,0.15); background-color: rgba(255,255,255,0.3)}
+#ProfessionalBackground div.job-container {
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.5),
+    0 2px 2px rgba(0,0,0,0.3),
+    0 0 4px 1px rgba(0,0,0,0.2),
+    inset 0 3px 2px rgba(255,255,255,.22), 
+    inset 0 -3px 2px rgba(0,0,0,.15), 
+    inset 0 20px 10px rgba(255,255,255,.12), 
+    0 0 4px 1px rgba(0,0,0,.1), 
+    0 3px 2px rgba(0,0,0,.2);
+}
+
+#ProfessionalBackground span.job {position: relative; display: block; width: 100%;}
+
+/*Center Dots*/
+#ProfessionalBackground div.job-container-r .job::before, 
+#ProfessionalBackground div.job-container-l .job::before {
+	content: ''; 
+	display: block; 
+	position: absolute; 
+	text-align: center;
+	width: 15%; 
+	top: 45%; 
+	background-color: white;
+	border-radius: 10px; 
+	padding: 5px 0px;
+	z-index: 10;
+}
+
+#ProfessionalBackground div.job-container-r .job::before {left: -25.5%;}
+#ProfessionalBackground div.job-container-l .job::before {right: -25.5%;}
+
+#ProfessionalBackground div#experienceContainer #jc1 .job::before {content: '2014';}
+#ProfessionalBackground div#experienceContainer #jc2 .job::before {content: '2011';}
+#ProfessionalBackground div#experienceContainer #jc3 .job::before {content: '2009';}
+#ProfessionalBackground div#experienceContainer #jc4 .job::before {content: '2003';}
+#ProfessionalBackground div#educationContainer #jc1 .job::before {content: '2017';}
+#ProfessionalBackground div#educationContainer #jc2 .job::before {content: '1998';}
+
+#ProfessionalBackground div#experienceContainer .center-col::before, 
+#ProfessionalBackground div#experienceContainer .center-col::after, 
+#ProfessionalBackground div#educationContainer .center-col::before, 
+#ProfessionalBackground div#educationContainer .center-col::after {
+	display: block; 
+	position: absolute; 
+	text-align: center;
+	width: 80%; 
+	left: 10%;
+	background-color: white;
+	border-radius: 10px; 
+	padding: 5px 0px;
+	z-index: 10;
+}
+
+#ProfessionalBackground div#experienceContainer .center-col::before, 
+#ProfessionalBackground div#educationContainer .center-col::before {
+	content: 'TODAY'; 
+	top: 0px;
+}
+
+#ProfessionalBackground div#experienceContainer .center-col::after, 
+#ProfessionalBackground div#educationContainer .center-col::after {
+	content: 'b.1980';
+	bottom: 0px;
+}
+
+@media all and (max-width: 992px){
+
+	#ProfessionalBackground div.job-container .job::before,
+	#ProfessionalBackground div#experienceContainer .center-col::before, 
+	#ProfessionalBackground div#experienceContainer .center-col::after, 
+	#ProfessionalBackground div#educationContainer .center-col::before, 
+	#ProfessionalBackground div#educationContainer .center-col::after	{
+		font-size: 12px;
+	}
+
+}
+
+@media all and (max-width: 576px){
+	
+	#ProfessionalBackground div.job-container .job::before {
+		content: '' !important; 
+		border-radius: 100%;
+		width: 7%;
+		padding: 7% 0px 0px 0px;
+	}
+	
+	#ProfessionalBackground div#experienceContainer .center-col::before, 
+	#ProfessionalBackground div#experienceContainer .center-col::after, 
+	#ProfessionalBackground div#educationContainer .center-col::before, 
+	#ProfessionalBackground div#educationContainer .center-col::after {
+		content: '' !important; 
+		border-radius: 100%;
+		width: 29%;
+		left: 35.5%;
+		padding: 29% 0px 0px 0px;
+	}
+	
+	#ProfessionalBackground div.job-container-r .job::before {left: -21.75%;}
+	#ProfessionalBackground div.job-container-l .job::before {right: -21.75%;}
+}
+
+/*Pointers*/
+#ProfessionalBackground div.job-container-r::before,
+#ProfessionalBackground div.job-container-l::before {
+	content:''; 
+	display: block; 
+	position: absolute; 
+	border-width: 10px; 
+	border-style: solid; 
+	border-color:transparent; 
+	opacity: 0.35; 
+	top: 47%;
+}
+
+#ProfessionalBackground div.job-container-l::before {right: -21px; border-left-color: white;}
+#ProfessionalBackground div.job-container-r::before {left: -21px; border-right-color: white;}
+
+/* Projects */
+#Projects {padding: 20px; padding-top: 80px; background-color: rgba(0,0,0,0.7);}
+#Projects img.img-responsive {width: 100%;}
+#Projects .row-introtext, .row-tags {text-align: center;}
+
+#Projects a.img-link {position: relative; display: block; margin-top: 20px; width: 100%; overflow: hidden; border-radius: 20px; border: 1px solid rgba(0,0,0,0.15); background-color: rgba(255,255,255,0.3)}
+#Projects a.img-link img {opacity: 0.9}
+#Projects a.img-link img:hover {opacity: 1}
+
+#Projects .row-introtext {margin: 10px 0px;}
+#Projects .row-introtext p {padding: 0px; margin: 0px;}
+#Projects .row-introtext a {color: white; margin-top: 20px;}
+
+#Projects .row-tags span {
+	display: inline-block; 
+	border: 1px solid #999; 
+	background-color: #ddd; 
+	padding: 5px; 
+	margin: 5px 5px 0px 0px; 
+	border-radius: 3px; 
+	width: 50px; 
+	height: 50px; 
+	background-position: center; 
+	background-repeat: no-repeat;
+	background-size: 40px 40px;
+}
+#Projects .HTML5 {background-image: url(/images/html5.png);}
+#Projects .CSS3 {background-image: url(/images/css3.png);}
+#Projects .Javascript {background-image: url(/images/js.png);}
+#Projects .jQuery {background-image: url(/images/jquery.png);}
+#Projects .Bootstrap {background-image: url(/images/Bootstrap.png);}
+#Projects .cSharp {background-image: url(/images/c%23.png);}
+#Projects .ASPNET {background-image: url(/images/asp-net.png);}
+#Projects .SQL {background-image: url(/images/sql.png);}
+#Projects .PHP {background-image: url(/images/php.png);}
+#Projects .Joomla {background-image: url(/images/joomla.png);}
+#Projects .WordPress {background-image: url(/images/wordpress.png);}
+#Projects .Responsive {background-image: url(/images/responsive.png);}
+#Projects .SEO {background-image: url(/images/seo.png);}
+#Projects .eCommerce {background-image: url(/images/ecommerce.png);}
+
+/* Reach Out */
+#ReachOut {padding-top: 80px; padding-bottom: 50px; color: white;}
+#ReachOut .ro-container {padding: 20px; background-color: rgba(0,0,0,0.7); border-radius: 20px; box-shadow: 5px 5px 20px rgba(0,0,0,0.3);}
+#ReachOut .row-container, #ReachOut .submit-container {display: block; margin-bottom: 20px;}
+#ReachOut .row-container input, #ReachOut .row-container textarea {width: 70%}
+#ReachOut .row-container input {vertical-align: middle; height: 50px; line-height: 50px; padding-left: 5px; font-size: 20px;}
+#ReachOut .row-container textarea {vertical-align: middle; height: 100px; line-height: 1.1em; padding-left: 5px; padding-top: 5px;}
+#ReachOut .row-container label {vertical-align: middle; width: 20%; padding-right: 20px; text-align: right; box-sizing: border-box;}
+#ReachOut .submitButton {cursor: pointer; display: block; margin: 0px auto; height: 50px; border: none; border-radius: 5px; width: 20%; background-color: rgba(255,255,255,0.7);}
+#ReachOut .submitButton:hover {background-color: white;}
+
+@media all and (max-width: 767px){
+#ReachOut .row-container label {width: 30%;}
+#ReachOut .row-container input, #ReachOut .row-container textarea {width: 65%;}
+}
+
+@media all and (max-width: 576px){
+#ReachOut .row-container label, #ReachOut .row-container input, #ReachOut .row-container textarea{display: block; width: 100%; text-align: left;}
+}
