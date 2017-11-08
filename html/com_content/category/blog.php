@@ -29,14 +29,14 @@ $results = $dispatcher->trigger('onContentAfterDisplay', array($this->category->
 $afterDisplayContent = trim(implode("\n", $results));
 
 ?>
-<div class="projectsList container-fluid">
+<div class="projectsList container">
 	<?php
 	$introcount = count($this->intro_items);
 	$counter = 0;
 	?>
 
 	<?php if (!empty($this->intro_items)) : ?>
-	<div class="row justify-content-center"> 
+	<div class="row justify-content-center">
 		<?php foreach ($this->intro_items as $key => &$item) : ?>
 			<!-- start item -->
 				<?php
