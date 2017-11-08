@@ -115,7 +115,7 @@ function ABBcreateAnimation() {
 			x: ABBrand(0, canvasWidth),
 			y: ABBrand(0, canvasHeight),
 			angle: ABBrand(0, Math.PI * 2),
-			vel: ABBrand(0.0, 0.1),
+			vel: ABBrand(0.0, 0.2),
 			tick: ABBrand(0, 10000)
 		});
 	}
@@ -126,10 +126,10 @@ function ABBresize() {
 	canvasHeight = c1.height = c2.height = parentEl.offsetHeight;
 }
 
-var reqanimationreference 
+var reqanimationreference
 
 function ABBanimate() {
-	
+
 	reqanimationreference = window.requestAnimationFrame(ABBanimate);
 
 	ctx2.clearRect(0, 0, canvasWidth, canvasHeight);
@@ -169,10 +169,10 @@ function ABBanimate() {
 		}
 
 		part.tick++;
-		
+
 		if(sm.checkMobile()){
 			cancelAnimationFrame(reqanimationreference);
-		}		
+		}
 	}
 }
 

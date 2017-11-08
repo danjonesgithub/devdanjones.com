@@ -19,8 +19,9 @@ p {color: white;}
 
 
 /* Nav*/
-.navbar {position: absolute; width: 100%; z-index: 99; background-color: rgba(0,0,0,0.8) !important;}
-.navbar.nav-fixed {position: fixed; width: 100%; top: 0px !important; z-index: 1000; background-color: rgba(0,0,0,0.8) !important;}
+.navbar {position: absolute; height: 0px; min-height: 56px; overflow: visible; width: 100%; z-index: 99; background-color: rgba(0,0,0,0.8) !important;}
+.navbar.nav-fixed {position: fixed; height: 56px; min-height: 0px; padding-top: 0px; padding-bottom: 0px; overflow: hidden; width: 100%; top: 0px !important; z-index: 1000; background-color: rgba(0,0,0,0.8) !important; transition-property: height; transition-duration: 0.5s;}
+.navbar.nav-fixed.no-animation {transition-duration: 0s;}
 .navbar.nav-mobile {position: fixed !important; top: 0px}
 .navbar-brand {font-weight: bold;}
 
@@ -95,10 +96,10 @@ p {color: white;}
     inset 0 1px 0 rgba(255,255,255,0.5),
     0 2px 2px rgba(0,0,0,0.3),
     0 0 4px 1px rgba(0,0,0,0.2),
-    inset 0 3px 2px rgba(255,255,255,.22), 
-    inset 0 -3px 2px rgba(0,0,0,.15), 
-    inset 0 20px 10px rgba(255,255,255,.12), 
-    0 0 4px 1px rgba(0,0,0,.1), 
+    inset 0 3px 2px rgba(255,255,255,.22),
+    inset 0 -3px 2px rgba(0,0,0,.15),
+    inset 0 20px 10px rgba(255,255,255,.12),
+    0 0 4px 1px rgba(0,0,0,.1),
     0 3px 2px rgba(0,0,0,.2);
 }
 
@@ -106,10 +107,10 @@ p {color: white;}
 	position: relative;
 	display: block;
 	width: 100%;
-	padding-top: 130%; 
-	background-size: 80% 60%; 
+	padding-top: 130%;
+	background-size: 80% 60%;
 	background-position: 50% 20%;
-	background-repeat: no-repeat; 
+	background-repeat: no-repeat;
 	-webkit-transition-property: color;
     transition-property: color;
     -webkit-transition-duration: 1s;
@@ -233,26 +234,26 @@ p {color: white;}
     inset 0 1px 0 rgba(255,255,255,0.5),
     0 2px 2px rgba(0,0,0,0.3),
     0 0 4px 1px rgba(0,0,0,0.2),
-    inset 0 3px 2px rgba(255,255,255,.22), 
-    inset 0 -3px 2px rgba(0,0,0,.15), 
-    inset 0 20px 10px rgba(255,255,255,.12), 
-    0 0 4px 1px rgba(0,0,0,.1), 
+    inset 0 3px 2px rgba(255,255,255,.22),
+    inset 0 -3px 2px rgba(0,0,0,.15),
+    inset 0 20px 10px rgba(255,255,255,.12),
+    0 0 4px 1px rgba(0,0,0,.1),
     0 3px 2px rgba(0,0,0,.2);
 }
 
 #ProfessionalBackground span.job {position: relative; display: block; width: 100%;}
 
 /*Center Dots*/
-#ProfessionalBackground div.job-container-r .job::before, 
+#ProfessionalBackground div.job-container-r .job::before,
 #ProfessionalBackground div.job-container-l .job::before {
-	content: ''; 
-	display: block; 
-	position: absolute; 
+	content: '';
+	display: block;
+	position: absolute;
 	text-align: center;
-	width: 15%; 
-	top: 45%; 
+	width: 15%;
+	top: 45%;
 	background-color: white;
-	border-radius: 10px; 
+	border-radius: 10px;
 	padding: 5px 0px;
 	z-index: 10;
 }
@@ -267,28 +268,28 @@ p {color: white;}
 #ProfessionalBackground div#educationContainer #jc1 .job::before {content: '2017';}
 #ProfessionalBackground div#educationContainer #jc2 .job::before {content: '1998';}
 
-#ProfessionalBackground div#experienceContainer .center-col::before, 
-#ProfessionalBackground div#experienceContainer .center-col::after, 
-#ProfessionalBackground div#educationContainer .center-col::before, 
+#ProfessionalBackground div#experienceContainer .center-col::before,
+#ProfessionalBackground div#experienceContainer .center-col::after,
+#ProfessionalBackground div#educationContainer .center-col::before,
 #ProfessionalBackground div#educationContainer .center-col::after {
-	display: block; 
-	position: absolute; 
+	display: block;
+	position: absolute;
 	text-align: center;
-	width: 80%; 
+	width: 80%;
 	left: 10%;
 	background-color: white;
-	border-radius: 10px; 
+	border-radius: 10px;
 	padding: 5px 0px;
 	z-index: 10;
 }
 
-#ProfessionalBackground div#experienceContainer .center-col::before, 
+#ProfessionalBackground div#experienceContainer .center-col::before,
 #ProfessionalBackground div#educationContainer .center-col::before {
-	content: 'TODAY'; 
+	content: 'TODAY';
 	top: 0px;
 }
 
-#ProfessionalBackground div#experienceContainer .center-col::after, 
+#ProfessionalBackground div#experienceContainer .center-col::after,
 #ProfessionalBackground div#educationContainer .center-col::after {
 	content: 'b.1980';
 	bottom: 0px;
@@ -297,9 +298,9 @@ p {color: white;}
 @media all and (max-width: 992px){
 
 	#ProfessionalBackground div.job-container .job::before,
-	#ProfessionalBackground div#experienceContainer .center-col::before, 
-	#ProfessionalBackground div#experienceContainer .center-col::after, 
-	#ProfessionalBackground div#educationContainer .center-col::before, 
+	#ProfessionalBackground div#experienceContainer .center-col::before,
+	#ProfessionalBackground div#experienceContainer .center-col::after,
+	#ProfessionalBackground div#educationContainer .center-col::before,
 	#ProfessionalBackground div#educationContainer .center-col::after	{
 		font-size: 12px;
 	}
@@ -307,25 +308,25 @@ p {color: white;}
 }
 
 @media all and (max-width: 576px){
-	
+
 	#ProfessionalBackground div.job-container .job::before {
-		content: '' !important; 
+		content: '' !important;
 		border-radius: 100%;
 		width: 7%;
 		padding: 7% 0px 0px 0px;
 	}
-	
-	#ProfessionalBackground div#experienceContainer .center-col::before, 
-	#ProfessionalBackground div#experienceContainer .center-col::after, 
-	#ProfessionalBackground div#educationContainer .center-col::before, 
+
+	#ProfessionalBackground div#experienceContainer .center-col::before,
+	#ProfessionalBackground div#experienceContainer .center-col::after,
+	#ProfessionalBackground div#educationContainer .center-col::before,
 	#ProfessionalBackground div#educationContainer .center-col::after {
-		content: '' !important; 
+		content: '' !important;
 		border-radius: 100%;
 		width: 29%;
 		left: 35.5%;
 		padding: 29% 0px 0px 0px;
 	}
-	
+
 	#ProfessionalBackground div.job-container-r .job::before {left: -21.75%;}
 	#ProfessionalBackground div.job-container-l .job::before {right: -21.75%;}
 }
@@ -333,13 +334,13 @@ p {color: white;}
 /*Pointers*/
 #ProfessionalBackground div.job-container-r::before,
 #ProfessionalBackground div.job-container-l::before {
-	content:''; 
-	display: block; 
-	position: absolute; 
-	border-width: 10px; 
-	border-style: solid; 
-	border-color:transparent; 
-	opacity: 0.35; 
+	content:'';
+	display: block;
+	position: absolute;
+	border-width: 10px;
+	border-style: solid;
+	border-color:transparent;
+	opacity: 0.35;
 	top: 47%;
 }
 
@@ -360,15 +361,15 @@ p {color: white;}
 #Projects .row-introtext a {color: white; margin-top: 20px;}
 
 #Projects .row-tags span {
-	display: inline-block; 
-	border: 1px solid #999; 
-	background-color: #ddd; 
-	padding: 5px; 
-	margin: 5px 5px 0px 0px; 
-	border-radius: 3px; 
-	width: 50px; 
-	height: 50px; 
-	background-position: center; 
+	display: inline-block;
+	border: 1px solid #999;
+	background-color: #ddd;
+	padding: 5px;
+	margin: 5px 5px 0px 0px;
+	border-radius: 3px;
+	width: 50px;
+	height: 50px;
+	background-position: center;
 	background-repeat: no-repeat;
 	background-size: 40px 40px;
 }

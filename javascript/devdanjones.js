@@ -23,7 +23,7 @@ Page.prototype.pushState = function(){
 Page.prototype.scrollTo = function(){
 	$('html,body').stop().animate({
 		scrollTop : $(this.Id).offset().top
-		},	
+		},
 		800,
 		'easeOutExpo',
 		function(){
@@ -43,29 +43,39 @@ var serviceMod = function(){
 		$(pages[0].Id).find('.row1').height($(window).height());
 		$('#navBar').css('top',$(window).height());
 	}
-	
+
 	var checkMobile = function(){
 		return $(window).width() <= 562;
 	}
-	
-	var _isFixedHeader = false;
-	
+
+	var headerFixed = false;
+
 	var checkFixHeader = function(){
-		_isFixedHeader = !_isFixedHeader && $(window).scrollTop() >= $('#Home').outerHeight();
-		return !_isFixedHeader;
+		if (!this.headerFixed && $(window).scrollTop() >= $('#Home').outerHeight()){
+			this.headerFixed = true;
+			return true;
+		} else {
+			return false;
+		}
 	}
-	
+
 	var checkUnfixHeader = function(){
-		_isFixedHeader = _isFixedHeader && $(window).scrollTop() < $('#Home').outerHeight();
-		return !_isFixedHeader;
+		if (this.headerFixed && $(window).scrollTop() < $('#Home').outerHeight()){
+			this.headerFixed = false;
+			return true;
+		} else {
+			return false;
+		}
 	}
-	
+
 	return {
 		setHomeHeight : setHomeHeight,
 		checkMobile	: checkMobile,
 		checkFixHeader : checkFixHeader,
-		checkUnfixHeader : checkUnfixHeader
+		checkUnfixHeader : checkUnfixHeader,
+		headerFixed : headerFixed
 	}
+
 }
 
 var sm = serviceMod();
@@ -84,28 +94,28 @@ var pages = [];
 //--------------------------------
 
 function popState(e){
-	
+
 	e.preventDefault();
 	scrollspyPushState = false;
-	
+
 	var i = getPageIndexFromUrl(top.location.href);
-	
-	pages[].scrollTo();
+
+	pages[i].scrollTo();
 }
 
 function topNavClick(e){
-	
+
 	e.preventDefault();
 	scrollspyPushState = false;
-	
+
 	var i = $(e.target).data('index')
-	
+
 	pages[i].scrollTo();
 	pages[i].pushState();
 }
 
 function scrollspyChangeActiveLink(e){
-	
+
 	var i = getPageIndexFromActiveLink();
 
 	pages[i].pushState();
@@ -180,23 +190,23 @@ function constructPageObjects(){
 			$(this).data('title'),
 			$(this).data('desc'),
 			$(this).data('url')
-		));	
+		));
 	});
 }
-	
+
 $(document).ready(function(){
 	constructPageObjects();
-	
+
 	wow = new WOW({offset: 100, mobile: false})
     wow.init();
-	
+
 	//Initialise Homepage
 	sm.setHomeHeight();
 	$('.navbar').show();
 	ABBinit(pages[0].Id.replace('#',''));
 	$('#DDJLoading').css('opacity',0).delay(1000).css('display','none');
-	
-	
+
+
 	//Initialise Bootstrap Scrollspy
 	$('body').scrollspy({ target: '#navBar-nav', offset: 110 });
 	$(window).on('activate.bs.scrollspy', function(e){
@@ -204,33 +214,33 @@ $(document).ready(function(){
 			scrollspyChangeActiveLink(e);
 		}
 	});
-	
+
 	//Initialize top nav anchors
 	$('#navBar-nav a').on('click', function(e){topNavClick(e);});
-	
+
 	//Setup PopState Handling
 	if(Modernizr.history){
 		$(window).on('popstate', function(e){popState(e);});
 	}
-	
+
 	//scroll page to target if not home
 	var i = getPageIndexFromUrl(top.location.href);
 	pages[i].scrollTo();
-	
+
 	//init footer form
 	$('#footerForm').on('submit', function(event){submitFooterForm(event);})
-	
+
 	//init resize
 	$(window).on('resize', function(){
 		sm.setHomeHeight();
 	});
-	
+
 	// init scroll
 	$(window).on('scroll', function(){
 		if(sm.checkFixHeader()){
 			$('#navBar').addClass('nav-fixed');
 		} else if(sm.checkUnfixHeader()){
-			$('#navBar').removeClass('nav-fixed');
+			$('#navBar').removeClass('nav-fixed no-animation');
 		}
 	});
 });
