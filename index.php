@@ -18,26 +18,26 @@ require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'rendererheader.php';
 	<head>
       	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes"/>
-        <jdoc:include type="head" />	
+        <jdoc:include type="head" />
         <!--<link href="/templates/devdanjones/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />-->
 		<link rel="shortcut icon" href="/templates/devdanjones/favicon.ico" type="image/x-generic" />
 		<link rel="icon" href="/templates/devdanjones/favicon.ico" type="image/x-generic" />
-      
+
         <!--Add jQuery & jQuery UI-->
       	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 		<script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
-      
+
         <!--Add Bootstrap-->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
       	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"/>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-        
+
         <!-- Add Modernizr -->
 		<script src="/templates/devdanjones/javascript/modernizr-custom.js"></script>
-				
+
 		<!--Add animated-bokeh-background-javascript-canvas -->
 		<script src="/templates/devdanjones/javascript/animated-bokeh-background-javascript-canvas.js"></script>
-		
+
 		<!--Add wow.js -->
         <link rel="stylesheet" href="/templates/devdanjones/javascript/wowJs/css/libs/animate.css"/>
       	<script src="/templates/devdanjones/javascript/wowJs/dist/wow.min.js"></script>
@@ -45,14 +45,14 @@ require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'rendererheader.php';
       	<!--Add nanoGallery.js -->
       	<link href="/templates/devdanjones/javascript/nanoGalleryJs/css/nanogallery.css" rel="stylesheet" />
 		<script src="/templates/devdanjones/javascript/nanoGalleryJs/jquery.nanogallery.js"></script>
-		
+
 		<!--Add mouseWheelScrollSmoothing -->
 		<!--<script src="/templates/devdanjones/javascript/mousewheelScrollSmoothing.js"></script>-->
-      	
+
       	<!--Custom DevDanJones -->
       	<link rel="stylesheet" href="/templates/devdanjones/css/devdanjones.css" />
       	<script src="/templates/devdanjones/javascript/devdanjones.js"></script>
-		
+
 		<!--Add Fonts -->
 		<!--<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet"> -->
 		<link href='https://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,700' rel="stylesheet">
@@ -88,7 +88,7 @@ require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'rendererheader.php';
 				  </li>
 				</ul>
 			  </div>
-			</nav>	
+			</nav>
 		</header>
 		<main>
 			<section id="Message">
@@ -123,7 +123,7 @@ require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'rendererheader.php';
 							<h2 class="col">Professional Full-Stack Developer</h2>
 						</div>
 					</div>
-					<div class="center-con" onclick="pages[1].scrollTo();">
+					<div class="center-con" onclick="pages[1].scrollTo(); $('.navbar').addClass('no-animation');">
 						<div class="round">
 							<span></span>
 							<span></span>
@@ -352,7 +352,7 @@ require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'rendererheader.php';
 									<div class="job-container job-container-r wow fadeInRight" id="jc2">
 										<span class="job" id="job2">
 											<span class="job-title">
-												Head of IT Consulting 
+												Head of IT Consulting
 											</span>
 											<span class="job-dates">
 												SmallWorlders, 2011 - Present

@@ -48,24 +48,38 @@ var serviceMod = function(){
 		return $(window).width() <= 562;
 	}
 
+<<<<<<< HEAD
 	var _isFixedHeader = false;
+=======
+	var headerFixed = false;
+>>>>>>> e7dd460f09e9144e92c309f812c3094446f292c6
 
 	var checkFixHeader = function(){
-		_isFixedHeader = !_isFixedHeader && $(window).scrollTop() >= $('#Home').outerHeight();
-		return !_isFixedHeader;
+		if (!this.headerFixed && $(window).scrollTop() >= $('#Home').outerHeight()){
+			this.headerFixed = true;
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	var checkUnfixHeader = function(){
-		_isFixedHeader = _isFixedHeader && $(window).scrollTop() < $('#Home').outerHeight();
-		return !_isFixedHeader;
+		if (this.headerFixed && $(window).scrollTop() < $('#Home').outerHeight()){
+			this.headerFixed = false;
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	return {
 		setHomeHeight : setHomeHeight,
 		checkMobile	: checkMobile,
 		checkFixHeader : checkFixHeader,
-		checkUnfixHeader : checkUnfixHeader
+		checkUnfixHeader : checkUnfixHeader,
+		headerFixed : headerFixed
 	}
+
 }
 
 var sm = serviceMod();
@@ -91,7 +105,11 @@ function popState(e){
 
 	var i = getPageIndexFromUrl(top.location.href);
 
+<<<<<<< HEAD
 	pages[].scrollTo();
+=======
+	pages[i].scrollTo();
+>>>>>>> e7dd460f09e9144e92c309f812c3094446f292c6
 }
 
 function topNavClick(e){
@@ -231,7 +249,7 @@ $(document).ready(function(){
 		if(sm.checkFixHeader()){
 			$('#navBar').addClass('nav-fixed');
 		} else if(sm.checkUnfixHeader()){
-			$('#navBar').removeClass('nav-fixed');
+			$('#navBar').removeClass('nav-fixed no-animation');
 		}
 	});
 });
