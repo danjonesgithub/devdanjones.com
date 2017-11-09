@@ -22,8 +22,11 @@ p {color: white;}
 .navbar {position: absolute; height: 0px; min-height: 56px; overflow: visible; width: 100%; z-index: 99; background-color: rgba(0,0,0,0.8) !important;}
 .navbar.nav-fixed {position: fixed; height: 56px; min-height: 0px; padding-top: 0px; padding-bottom: 0px; overflow: hidden; width: 100%; top: 0px !important; z-index: 1000; background-color: rgba(0,0,0,0.8) !important; transition-property: height; transition-duration: 0.5s;}
 .navbar.nav-fixed.no-animation {transition-duration: 0s;}
-.navbar.nav-mobile {position: fixed !important; top: 0px}
 .navbar-brand {font-weight: bold;}
+
+@media all and (max-width: 992px){
+	.navbar.nav-fixed {top: 0px; padding-top: 15px; padding-bottom: 15px; height: auto; min-height: 0px; transition-duration: 0s;}
+}
 
 /*Loading */
 #DDJLoading {position: fixed; z-index: 100; top: 0px; bottom: 0px; left: 0px; right: 0px; background-color: #e5eff1; font-size: 36px; transition-property: opacity; transition-duration: 1s; opacity: 1;}
