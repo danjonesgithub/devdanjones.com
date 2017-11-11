@@ -37,7 +37,7 @@ Page.prototype.scrollTo = function(){
 // Modules
 //--------------------------------
 
-var serviceMod = function(){
+var sm = (function(){
 	var setHomeHeight = function(){
 		$(pages[0].Id).height($(window).height());
 		$(pages[0].Id).find('.row1').height($(window).height());
@@ -48,28 +48,22 @@ var serviceMod = function(){
 		return $(window).width() <= 562;
 	}
 
-<<<<<<< HEAD
-	var _isFixedHeader = false;
-=======
 	var headerFixed = false;
->>>>>>> e7dd460f09e9144e92c309f812c3094446f292c6
 
 	var checkFixHeader = function(){
 		if (!this.headerFixed && $(window).scrollTop() >= $('#Home').outerHeight()){
 			this.headerFixed = true;
 			return true;
-		} else {
-			return false;
 		}
+		return false;
 	}
 
 	var checkUnfixHeader = function(){
 		if (this.headerFixed && $(window).scrollTop() < $('#Home').outerHeight()){
 			this.headerFixed = false;
 			return true;
-		} else {
-			return false;
 		}
+		return false;
 	}
 
 	return {
@@ -80,10 +74,7 @@ var serviceMod = function(){
 		headerFixed : headerFixed
 	}
 
-}
-
-var sm = serviceMod();
-
+})();
 
 //--------------------------------
 // Global Variables
@@ -105,11 +96,7 @@ function popState(e){
 
 	var i = getPageIndexFromUrl(top.location.href);
 
-<<<<<<< HEAD
-	pages[].scrollTo();
-=======
 	pages[i].scrollTo();
->>>>>>> e7dd460f09e9144e92c309f812c3094446f292c6
 }
 
 function topNavClick(e){
@@ -136,24 +123,20 @@ function scrollspyChangeActiveLink(e){
 //--------------------------------
 
 function getPageIndexFromUrl(url){
-	var ind;
-	[].forEach.call(pages, function(item,index){
-		if(item.Url.toLowerCase().replace('http://','').replace('www.','') == url.toLowerCase().replace('http://','').replace('www.','').replace(baseUrl,'')){
-			ind = index;
+	for(var i=0; i<pages.length; i++){
+		if(pages[i].Url.toLowerCase().replace('http://','').replace('www.','') == url.toLowerCase().replace('http://','').replace('www.','').replace(baseUrl,'')){
+			return i;
 		}
-	});
-	return ind;
+	}
 }
 
 function getPageIndexFromActiveLink(){
-	var ind;
 	var activeLink = $('.navbar a.active').attr('href').replace(top.location.href, '');
-	[].forEach.call(pages, function(item,index){
-		if(item.Id.toLowerCase() == activeLink.toLowerCase()){
-			ind = index;
+	for(var i=0; i<pages.length; i++){
+		if(pages[i].Id.toLowerCase() == activeLink.toLowerCase()){
+			return i;
 		}
-	});
-	return ind;
+	}
 }
 
 //--------------------------------
